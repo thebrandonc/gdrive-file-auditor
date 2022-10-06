@@ -20,7 +20,7 @@ class Notification {
       this.ui.alert(title, msg, this.ui.ButtonSet.OK);
     } else {
       console.log(msg);
-    }
+    };
   };
 };
 
@@ -34,10 +34,12 @@ function onOpen() {
 function main() {
   try {
     const fileAudit = new FileAuditor();
-    new SheetManager(fileAudit.data).setValues();
 
-    const msg = `Your file audit is complete.`;
-    new Notification().send('success', msg);
+    if (fileAudit.isComplete) {
+      new SheetManager(fileAudit.data).setValues();
+      const msg = `Your file audit is complete.`;
+      new Notification().send('success', msg);
+    };
     
   } catch(err) {
     const msg = `There was a problem running the audit. ${err}`;

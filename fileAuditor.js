@@ -11,6 +11,7 @@ class FileAuditor {
       while(driveFiles.hasNext()) {
         const file = driveFiles.next();
         const parent = this.getParentFolder(file)
+        this.currentUrl = file.getUrl();
         const fileData = {
           created: file.getDateCreated(),
           modified: file.getLastUpdated(),
@@ -25,10 +26,13 @@ class FileAuditor {
 
         files.push(fileData);
       };
+      this.isComplete = true;
       return files;
 
     } catch(err) {
-      const msg = `Error gathering Drive files. ${err}`;
+      this.isComplete = false;
+      const msg = `Error gathering Drive files. ${err}. 
+        Error occured on the following file: ${this.currentUrl}`;
       new Notification().send('error', msg);
     };
   };
