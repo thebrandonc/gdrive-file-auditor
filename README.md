@@ -11,7 +11,7 @@ The easiest way to get started is by copying the following spreadsheet template 
 
 Alternatively, you can get started by manually inserting the scripts in this repo into your Apps Script editor. Start by creating Apps Script files corresponding to each of the JS files in this repo. Next, copy the contents of each JS file and paste them into appropriate Apps Script file. Once all of the contents are copied over, open the `index.gs` file in your Apps Script editor, and run the `main()` function. Google will prompt you with a request to authorize some permissions so the script can access your spreadsheet and google drive account. 
 
-Once authorization is granted, you are ready to set up the spreadsheet to start duplicating Google Drive folders. Please follow the format of the template spreadsheet provided here: [Spreadsheet Template](https://docs.google.com/spreadsheets/d/191ojcr1xTigFTqcVWsSHlehrP8enPbB9zxPcOpaWyDw/edit?usp=sharing)
+Once authorization is granted, you are ready to set up the spreadsheet to start auditing Google Drive folders. Please follow the format of the template spreadsheet provided here: [Spreadsheet Template](https://docs.google.com/spreadsheets/d/191ojcr1xTigFTqcVWsSHlehrP8enPbB9zxPcOpaWyDw/edit?usp=sharing)
 
 Happy auditing!
 
