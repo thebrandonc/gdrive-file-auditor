@@ -10,9 +10,9 @@ class SheetManager {
     try {
       if (this.sheetLength > 1) {
         console.log(this.sheetLength);
-        this.sheet.getRange(2,1,this.sheetLength, 9).setValue('');
+        this.sheet.getRange(2, 1, this.sheetLength, 9).setValue('');
       };
-    } catch(err) {
+    } catch (err) {
       const msg = `Could not clear spreadsheet. ${err}`;
       new Notification().send('error', msg);
     };
@@ -24,7 +24,7 @@ class SheetManager {
       this.clearSheet();
       this.sheet.getRange(2, 1, this.files.length, 9).setValues(this.files);
 
-    } catch(err) {
+    } catch (err) {
       const msg = `Could not update spreadsheet values. ${err}`;
       new Notification().send('error', msg);
     };
